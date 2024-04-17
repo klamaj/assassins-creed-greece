@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { CookiesComponent } from './cookies/cookies.component';
 import { FooterComponent } from './footer/footer.component';
+import { CookieService } from 'ngx-cookie-service';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -13,7 +15,16 @@ import { FooterComponent } from './footer/footer.component';
     FooterComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
+  ],
+  exports: [
+    HeaderComponent,
+    CookiesComponent,
+    FooterComponent
+  ],
+  providers: [
+    CookieService
   ]
 })
 export class CoreModule { }

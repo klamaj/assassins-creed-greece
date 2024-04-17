@@ -1,1 +1,60 @@
-<p>cookies works!</p>
+<div *ngIf="!hideCookie" class="fixed bottom-0 left-0 bg-[#191919] py-4 px-6 w-full md:max-w-[386px] md:left-7 rounded-t-[20px]">
+
+    <!-- text -->
+    <div class="w-full inline-flex justify-between items-center gap-4">
+        <p class="text-xs md:text-sm text-white">Ο ιστότοπος μας χρησιμοποιεί cookies, μάθε περισσότερα <span class="cursor-pointer underline font-bold" (click)="cookieNotice = true;">εδώ</span>.</p>
+        <svg (click)="hideCookie = true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <g clip-path="url(#clip0_515_599)">
+                <path d="M12.5 3.5L3.5 12.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12.5 12.5L3.5 3.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <!-- <defs>
+                <clipPath id="clip0_515_599">
+                <rect width="16" height="16" fill="white"/>
+                </clipPath>
+            </defs> -->
+        </svg>
+    </div>
+
+    <!-- buttons -->
+    <div class="w-full inline-flex items-center justify-center gap-16 mt-6">
+        <button (click)="hideCookie = true" id="rejectCookies" class="bg-none border-none cursor-pointer text-sm text-[#D9D9D9] font-bold w-max">Απίρριψη</button>
+        <div class="p-[1px] w-full rounded-full bg-gradient-to-r from-[#9C7230] to-[#F4D489] cursor-pointer">
+            <button id="acceptCookies" (click)="acceptCookies()" class="bg-[#191919] w-full h-10 hover:bg-transparent text-[#F0CF84] text-sm font-bold hover:text-[#191919] rounded-full">Αποδοχή</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- Cookies not -->
+<div *ngIf="cookieNotice" class="bg-black md:bg-opacity-80 fixed top-0 left-0 h-screen w-screen flex justify-center items-center px-4">
+
+    <div class="bg-[#191919] border-[1px] border-[#393939] rounded-[20px] p-4 w-full max-w-[650px]">
+        <div class="inline-flex justify-between items-center w-full">
+            <p class="text-base text-white font-bold">Cookies</p>
+            <svg (click)="cookieNotice = false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <g clip-path="url(#clip0_673_238)">
+                    <path d="M18.75 5.25L5.25 18.75" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M18.75 18.75L5.25 5.25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                    <clipPath id="clip0_673_238">
+                    <rect width="24" height="24" fill="white"/>
+                    </clipPath>
+                </defs>
+            </svg>
+        </div>
+        <div class="w-full h-[279px] overflow-y-scroll bg-[#0D0D0D] p-4 rounded-[10px] text-white text-sm mt-3">
+            <p>Η ομάδα μας δεν φέρει καμία ευθύνη για οποιαδήποτε ζημία, είτε αυτή αφορά υλικό είτε λογισμικό, στον υπολογιστή σας</p>
+            <p>Αξίζει να σημειωθεί ότι πρόκειται για μια τροποποίηση (mod) και όχι για επίσημη κυκλοφορία. Συγκεκριμένα, η ομάδα μας έχει προσαρμόσει τα αρχεία γλώσσας του παιχνιδιού.</p>
+            <p class="underline font-bold">Προς τους Δημουργούς Περιεχομένου:</p>
+        </div>
+        <div class="w-full inline-flex items-center justify-center gap-16 mt-6">
+        <button (click)="hideCookie = true ; cookieNotice = false;" id="rejectCookies" class="bg-none border-none cursor-pointer text-sm text-[#D9D9D9] font-bold w-max">Απίρριψη</button>
+            <div class="p-[1px] w-full rounded-full bg-gradient-to-r from-[#9C7230] to-[#F4D489] cursor-pointer">
+                <button id="acceptCookies" (click)="acceptCookies()" class="bg-[#191919] w-full h-10 hover:bg-transparent text-[#F0CF84] text-sm font-bold hover:text-[#191919] rounded-full">Αποδοχή</button>
+            </div>
+        </div>
+    </div>
+
+</div>
