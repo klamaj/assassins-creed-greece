@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CardComponent } from './home/card/card.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 export const routes: Routes = [
   {
@@ -17,7 +18,10 @@ export const routes: Routes = [
     CardComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule,
+    RouterModule.forChild(routes),
+    
   ]
 })
 
