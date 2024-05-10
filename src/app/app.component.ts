@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
     const cookieValue = this.cookieService.get('assassins-accept');
 
     if (cookieValue != 'accepted') {
-      // this.cookie = true;
+      this.cookie = true;
     }
   }
 }

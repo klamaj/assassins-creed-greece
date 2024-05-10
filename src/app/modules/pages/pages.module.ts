@@ -15,7 +15,7 @@ export const routes: Routes = [
 @NgModule({
   declarations: [
     HomeComponent,
-    CardComponent
+    CardComponent,
   ],
   imports: [
     CommonModule,

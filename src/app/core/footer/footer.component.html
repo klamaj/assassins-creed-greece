@@ -1,1 +1,44 @@
-<p>footer works!</p>
+<div class="mt-[140px] mb-12 w-full">
+    <div class="flex flex-col md:flex-row md:gap-16 justify-start md:justify-center items-start gap-4 pb-8 border-b-[1px] border-opacity-10 border-white w-full">
+        <p class="text-xs font-bold text-[#7F7F7F] underline hover:text-white cursor-pointer">Όροι Xρήσης | Content creators</p>
+        <p (click)="creators = true;" class="text-xs font-bold text-[#7F7F7F] underline hover:text-white cursor-pointer">Συντελεστές</p>
+    </div>
+    <div class="mt-3 w-full">
+        <p class="text-white text-opacity-50 text-[10px] md:text-center">Οι υπότιτλοι έχουν δημιουργηθεί από την Assassin’s Creed Greece, μια ομάδα θαυμαστών. Δεν είναι επίσημοι και δεν έχει καμία ανάμειξη η Ubisoft στο Project αυτό.</p>
+        <p class="text-white text-opacity-50 text-[10px] pt-3 md:text-center">©Ubisoft Entertainment. All Rights Reserved.</p>
+    </div>
+</div>
+
+<!-- Creators -->
+<div *ngIf="creators" id="creators" class="w-screen h-screen flex justify-center items-center fixed left-0 top-0 bg-black bg-opacity-80">
+    <div class="w-full max-w-[650px] rounded-[20px] bg-[#191919] border border-[#393939] px-6 pt-4 pb-6">
+        <div class="w-full flex justify-between items-center">
+            <p style="font-family: 'Manrope'" class="text-white text-[16px] font-bold">Συνεισφέροντες</p>
+            <svg (click)="creators = false;" class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <g clip-path="url(#clip0_673_182)">
+                    <path d="M18.75 5.25L5.25 18.75" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M18.75 18.75L5.25 5.25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+            </svg>
+        </div>
+        <div class="bg-[#0D0D0D] rounded-[10px] w-full md:pb-8 p-4 mt-3">
+            <p class="text-white text-xs">Θέλουμε να εκφράσουμε την ειλικρινή μας ευγνωμοσύνη και εκτίμηση προς όλα τα άτομα που εργάστηκαν αφιλοκερδώς προκειμένου να ενσωματωθεί η ελληνική γλώσσα στο παιχνίδι, προσφέροντας σε όλους τους Έλληνες θαυμαστές της σειράς, τη δυνατότητα να απολαύσουν το παιχνίδι στη γλώσσα τους.</p>
+            <a href="https://www.instagram.com/alexlioness" target="_blank" rel="noopener noreferrer">
+                <p class="pt-6 text-[#B28945] font-bold">Αλεξάνδρα Αντωνάκα<span class="font-normal"> | Social Media Manager, AC Greece</span></p>
+                <p class="text-white text-xs">Μετάφραση & επεξεργασία υποτίτλων/Ελληνικών.</p>
+            </a>
+            <a href="https://www.facebook.com/Noonetranslator" target="_blank" rel="noopener noreferrer">
+                <p class="pt-6 text-[#B28945] font-bold">Johntaber<span class="font-normal"> | Modder Παιχνιδιών</span></p>
+                <p class="text-white text-xs">Επεξεργασία και ενσωμάτωση Ελληνικών στο παιχνίδι.</p>
+            </a>
+            <a href="https://www.linkedin.com/in/klamaj/" target="_blank" rel="noopener noreferrer">
+                <p class="pt-6 text-[#B28945] font-bold">Kristel Lamaj<span class="font-normal"> | Developer</span></p>
+                <p class="text-white text-xs">Υλοποίηση ιστοσελιδας, διαχείριση Server.</p>
+            </a>
+            <a href="https://www.instagram.com/yorgosklk" target="_blank" rel="noopener noreferrer">
+                <p class="pt-6 text-[#B28945] font-bold">Γιώργος Κολόκας<span class="font-normal"> | Visual Designer, AC Greece</span></p>
+                <p class="text-white text-xs">Σχεδιασμός ιστοσελίδας, Banners, Προωθητικό υλικό, Βίντεο, κλπ. </p>
+            </a>
+        </div>
+    </div>
+</div>

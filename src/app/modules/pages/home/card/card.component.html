@@ -14,8 +14,8 @@
             <!-- buttons -->
             <div class="w-full flex md:flex-row flex-col justify-center items-center mt-10 gap-6">
                 <!-- subs -->
-                <a [href]="item.document" target="_blank" rel="noopener noreferrer" class="w-full">
-                    <button type="button" class="inline-flex justify-center items-center w-full md:h-16 h-12 gap-2 bg-gradient-to-t from-[#77490A] to-[#EBC87F] cursor-pointer hover:bg-[#B28945] rounded-full text-sm md:text-base font-bold">
+                <!-- <a [href]="item.document" target="_blank" rel="noopener noreferrer" class="w-full"> -->
+                    <button (click)="setDocument(item.document)" type="button" class="inline-flex justify-center items-center w-full md:h-16 h-12 gap-2 bg-gradient-to-r from-[#77490A] to-[#EBC87F] cursor-pointer hover:from-[#B28945] hover:to-[#B28945] rounded-full text-sm md:text-base font-bold">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <g clip-path="url(#clip0_673_214)">
                                 <path d="M21 14.25V19.5C21 19.8978 20.842 20.2794 20.5607 20.5607C20.2794 20.842 19.8978 21 19.5 21H4.5C4.10218 21 3.72064 20.842 3.43934 20.5607C3.15804 20.2794 3 19.8978 3 19.5V14.25C3 14.0511 3.07902 13.8603 3.21967 13.7197C3.36032 13.579 3.55109 13.5 3.75 13.5C3.94891 13.5 4.13968 13.579 4.28033 13.7197C4.42098 13.8603 4.5 14.0511 4.5 14.25V19.5H19.5V14.25C19.5 14.0511 19.579 13.8603 19.7197 13.7197C19.8603 13.579 20.0511 13.5 20.25 13.5C20.4489 13.5 20.6397 13.579 20.7803 13.7197C20.921 13.8603 21 14.0511 21 14.25ZM11.4694 14.7806C11.539 14.8504 11.6217 14.9057 11.7128 14.9434C11.8038 14.9812 11.9014 15.0006 12 15.0006C12.0986 15.0006 12.1962 14.9812 12.2872 14.9434C12.3783 14.9057 12.461 14.8504 12.5306 14.7806L16.2806 11.0306C16.3856 10.9257 16.4572 10.792 16.4861 10.6465C16.5151 10.5009 16.5003 10.35 16.4435 10.2129C16.3867 10.0758 16.2904 9.95861 16.167 9.87621C16.0435 9.79381 15.8984 9.74988 15.75 9.75H12.75V3.75C12.75 3.55109 12.671 3.36032 12.5303 3.21967C12.3897 3.07902 12.1989 3 12 3C11.8011 3 11.6103 3.07902 11.4697 3.21967C11.329 3.36032 11.25 3.55109 11.25 3.75V9.75H8.25C8.10158 9.74988 7.95646 9.79381 7.83301 9.87621C7.70957 9.95861 7.61335 10.0758 7.55653 10.2129C7.49972 10.35 7.48487 10.5009 7.51385 10.6465C7.54284 10.792 7.61437 10.9257 7.71937 11.0306L11.4694 14.7806Z" fill="black"/>
@@ -23,9 +23,9 @@
                         </svg>
                         Λήψη υποτίτλων
                     </button>
-                </a>
+                <!-- </a> -->
                 <!-- donate -->
-                <a href="https://ko-fi.com/assassinscreedgreece" target="_blank" rel="ko-fi.com" class="w-full p-[2px] bg-gradient-to-t from-[#77490A] to-[#EBC87F] rounded-full">
+                <a href="https://ko-fi.com/assassinscreedgreece" target="_blank" rel="ko-fi.com" class="w-full p-[2px] bg-gradient-to-r from-[#77490A] to-[#EBC87F] rounded-full">
                     <button type="button" class="inline-flex justify-center items-center w-full h-[44px] md:h-[60px] gap-2 cursor-pointer bg-[#121212] hover:bg-transparent rounded-full text-sm md:text-base font-bold text-[#F0CF84] hover:text-black">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <g clip-path="url(#clip0_673_206)">
@@ -59,7 +59,7 @@
 
             <!-- links -->
             <div class="w-full flex md:flex-row flex-col justify-center items-center mt-10 gap-6 md:gap-8 md:mt-[110px]">
-                <a href="https://www.youtube.com/watch?v=QBziBJnWdNQ" rel="youtube" class="w-full cursor-pointer">
+                <a href="https://www.youtube.com/watch?v=QBziBJnWdNQ" target="_blank" rel="youtube" class="w-full cursor-pointer">
                     <div class="inline-flex justify-center items-center w-full gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <g clip-path="url(#clip0_673_226)">
@@ -115,4 +115,30 @@
         </div>
     </div>
 
+</div>
+
+<!-- Terms -->
+<div *ngIf="terms" class="w-screen h-screen flex justify-center items-center fixed left-0 top-0 bg-black bg-opacity-80">
+    <div class="w-full max-w-[650px] rounded-[20px] bg-[#191919] border border-[#393939] px-6 pt-4 pb-6">
+        <div class="w-full flex justify-between items-center">
+            <p class="text-white text-[16px] font-bold">Όροι χρήσης</p>
+            <svg (click)="terms = false;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <g clip-path="url(#clip0_673_167)">
+                    <path d="M18.75 5.25L5.25 18.75" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M18.75 18.75L5.25 5.25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+            </svg>
+        </div>
+        <div class="bg-[#0D0D0D] rounded-[10px] w-full lg:h-[336px] p-4 mt-3 overflow-auto">
+            <p class="text-white text-xs">Με τη χρήση και τη λήψη του αρχείου αποδέχεστε τους παρακάτω όρους και προϋποθέσεις:<br><br>Οιαδήποτε βλάβη προκύψει στο σύστημά σας, είτε πρόκειται για προβλήματα στο υλικό, είτε στο λογισμικό ή τα αρχεία του παιχνιδιού, η ομάδα μας, δεν φέρει ουδεμία ευθύνη. Η ευθύνη βαρύνει αποκλειστικά τον τελικό χρήστη.<br><br>Η ομάδα του Assassin’s Creed Greece δεν υποχρεούται να παρέχει υποστήριξη για την εγκατάσταση ή τη σωστή λειτουργία των αρχείων, είμαστε όμως στη διάθεση σας για να ακούσουμε τα προβλήματά σας και να προσπαθήσουμε να βοηθήσουμε όσο το δυνατόν περισσότερο στον Discord Server μας.<br><br>Η ομάδα του Assassin’s Creed Greece δεν υποχρεούται να βελτιώσει τους υπότιτλους, καθώς αυτό αποτελεί αφιλοκερδές έργο. Ωστόσο, πάντοτε προσπαθούμε να προσφέρουμε τη βέλτιστη δυνατή ποιότητα.<br><br>Απαγορεύεται να διανέμετε αυτά τα αρχεία και να παρουσιάζετε το έργο ως δική σας δημιουργία. Σε περίπτωση που παρουσιάσετε αυτό το έργο ως δικό σας με σκοπό το οικονομικό όφελος, υπόκειστε σε νομικές κυρώσεις.<br><br>Η ομάδα του Assassin’s Creed Greece δεν προσπορίζεται ουδέν οικονομικό όφελος από αυτό το έργο. Ενδεχομένως να μπορείτε μόνο προαιρετικά να συνεισφέρετε με δωρεές.<br><br>Όλα τα δικαιώματα ανήκουν στην Ubisoft© Entertainment. Οι υπότιτλοι έχουν δημιουργηθεί απο εμάς, επομένως, μην αναζητάτε υποστήριξη σχετικά με την ελληνική γλώσσα από από τη Ubisoft© Entertainment, καθώς δεν πρόκειται για επίσημη κυκλοφορία.<br><br>Οι Όροι χρήσης μπορούν αν τροποποιηθούν χωρίς προειδοποίηση.</p>
+        </div>
+        <div class="flex flex-col justify-end items-start lg:items-center lg:flex-row gap-8 pt-4">
+            <p (click)="terms = false;" id="close-terms-btn" class="text-white text-[14px] font-bold cursor-pointer">Κλείσιμο</p>
+            <a id="donwload" class="w-full max-w-[300px]" [href]="card">
+                    <button class="w-full rounded-full h-10 flex justify-center items-center gap-2 text-[#F0CF84] text-[14px] lg:text-[16px] font-bold bg-transparent border-2 border-[#734506] hover:bg-[#B28945] hover:text-black">
+                        Συμφωνώ, συνέχεια & Λήψη
+                    </button>
+                </a>
+        </div>
+    </div>
 </div>

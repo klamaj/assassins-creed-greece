@@ -1,4 +1,4 @@
-<main class="w-full flex flex-col justify-center items-center pt-40 px-8 bg-black">
+<main class="w-full flex flex-col justify-center items-center pt-20 px-8 bg-black">
   <!-- header -->
   <header class="w-full max-w-[1280px]">
     <app-header></app-header>
@@ -7,5 +7,8 @@
     <router-outlet></router-outlet>
   </section>
   <!-- cookies -->
-  <app-cookies *ngIf="!cookie"></app-cookies>
+  <app-cookies *ngIf="cookie"></app-cookies>
+  <div class="w-full max-w-[1280px]">
+    <app-footer></app-footer>
+  </div>
 </main>
