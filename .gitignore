@@ -6,6 +6,9 @@
 /out-tsc
 /bazel-out
 
+subs/
+# fonts/
+
 # Node
 /node_modules
 npm-debug.log

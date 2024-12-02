@@ -4,4 +4,5 @@ export interface Game {
     image: string;
     document: string;
     version: string;
+    info: string | null;
 }
